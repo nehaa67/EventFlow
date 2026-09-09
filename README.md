@@ -1,88 +1,84 @@
-# EventFlow AI
+# EventFlow
 
-### Making large events easier to monitor, understand, and manage.
+EventFlow is an AI-powered event management and crowd intelligence platform designed to help organizers understand what is happening during an event and make better decisions before small issues become major problems.
 
-EventFlow AI is a project we built for **Hack Celestial 3.0**.
+It combines real-time event data, crowd prediction, risk analysis, simulation, and actionable insights in one dashboard.
 
-The idea came from a simple problem: when thousands of people are inside a venue, things can change very quickly. A gate gets crowded, queues start growing, transport gets delayed, or an otherwise small issue turns into a bigger operational problem.
+## What EventFlow Does
 
-EventFlow brings these things together in one place so event organizers can understand what is happening and decide what to do next.
+EventFlow focuses on four main questions:
 
----
+- **What is happening?**  
+  Understand the current state of an event and crowd.
 
-## What can EventFlow do?
+- **What could happen next?**  
+  Predict crowd levels at different time intervals.
 
-### 👥 Crowd Status
-See how many people are at different gates, how busy each area is, and where queues are getting longer.
+- **What could go wrong?**  
+  Identify potential risks and high-risk situations.
 
-### ⚠️ Risk Forecast
-Identify areas that could become problematic based on current crowd conditions.
+- **What should we do about it?**  
+  Analyze possible causes and support better operational decisions.
 
-### 🔍 Why It's Happening
-Instead of simply showing an alert, understand what may be causing the problem.
+## Key Features
 
-### 🛠️ Response Actions
-See possible actions that an organizer can take when an area needs attention.
+### Crowd Prediction
+Predicts expected crowd levels for upcoming time intervals using trained machine learning models.
 
-### 🔮 What If?
-Try different operational scenarios and see how changing a decision could affect the situation.
+### Risk Analysis
+Identifies potential risks based on event conditions and crowd behaviour.
 
-### 🚌 Transport
-Keep track of transport-related conditions around the event.
+### Root Cause Analysis
+Helps identify the factors contributing to a detected issue instead of only showing the problem.
 
-### 🚨 Incidents & Conditions
-Keep track of important incidents and changing venue conditions from one place.
+### Event Simulation
+Allows organizers to explore different scenarios and understand how changes could affect the event.
 
----
+### Event State Monitoring
+Provides a structured view of the current event state so organizers can quickly understand important conditions.
 
-## A simple example
+### Interactive Dashboard
+A React-based interface brings the predictions, risks, simulations, and event insights together in one place.
 
-Imagine Gate 3 starts getting crowded.
+## Tech Stack
 
-People are arriving faster than they are entering, the waiting time is increasing, and the area is approaching its capacity.
-
-Instead of the organizer having to figure all of this out from separate numbers, EventFlow brings the information together:
-
-**Gate 3 is getting crowded → waiting time is increasing → risk is rising → action may be needed.**
-
-The goal isn't just to show more data.
-
-It's to make the data easier to understand and act on.
-
----
-
-## Current Demo
-
-The current demo simulates a live event at **Wankhede Stadium, Mumbai**.
-
-It includes things such as:
-
-- Live attendance
-- Venue occupancy
-- Gate-level crowd counts
-- Waiting times
-- Arrival and departure rates
-- Crowd risk levels
-- Active incidents
-- Staff deployment
-
-The current version uses simulated data so we can demonstrate how the system would work during a live event.
-
----
-
-## Built With
-
+### Frontend
 - React
 - Vite
-- JavaScript
 - Tailwind CSS
-- Lucide React
+- JavaScript
 
----
+### Backend
+- Python
+- FastAPI
+- Machine Learning
 
-## Running the project
+### Database
+- PostgreSQL
 
-Clone the repository:
+### Deployment
+- Vercel
+- Render
+- Docker
 
-```bash
-git clone https://github.com/nehaa67/HackCelestial-3.0.git
+## Project Structure
+
+```text
+EventFlow/
+├── backend/
+│   ├── app/
+│   ├── data/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── database/
+│   └── final.sql
+│
+├── scripts/
+├── docker-compose.yml
+└── render.yaml

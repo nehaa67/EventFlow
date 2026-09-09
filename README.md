@@ -1,84 +1,150 @@
 # EventFlow
 
-EventFlow is an AI-powered event management and crowd intelligence platform designed to help organizers understand what is happening during an event and make better decisions before small issues become major problems.
+### AI-Powered Event Intelligence & Crowd Safety Platform
 
-It combines real-time event data, crowd prediction, risk analysis, simulation, and actionable insights in one dashboard.
+EventFlow helps event organizers move from **reacting to problems** to **anticipating them**.
 
-## What EventFlow Does
+Large events are dynamic. Crowd density changes, queues build up, bottlenecks appear, and seemingly small issues can escalate quickly. EventFlow brings prediction, risk analysis, simulation, and decision support into a single platform so organizers can understand what is happening and prepare for what comes next.
 
-EventFlow focuses on four main questions:
+---
 
-- **What is happening?**  
-  Understand the current state of an event and crowd.
+## Why EventFlow?
 
-- **What could happen next?**  
-  Predict crowd levels at different time intervals.
+Managing a large event is not just about knowing how many people are present.
 
-- **What could go wrong?**  
-  Identify potential risks and high-risk situations.
+The real challenge is answering:
 
-- **What should we do about it?**  
-  Analyze possible causes and support better operational decisions.
+- Where is the crowd likely to build up?
+- When could congestion become a problem?
+- Which conditions are creating the risk?
+- What happens if the situation changes?
+- What action should organizers consider before the situation escalates?
 
-## Key Features
+Traditional event dashboards mainly show **what is happening now**.
+
+EventFlow focuses on **what could happen next and why**.
+
+---
+
+## What EventFlow Offers
 
 ### Crowd Prediction
-Predicts expected crowd levels for upcoming time intervals using trained machine learning models.
 
-### Risk Analysis
-Identifies potential risks based on event conditions and crowd behaviour.
+EventFlow uses machine learning models to estimate future crowd levels across multiple time horizons.
+
+This gives organizers an opportunity to identify potential crowd surges before they become operational problems.
+
+### Intelligent Risk Analysis
+
+The platform evaluates event conditions and identifies potential risk factors.
+
+Instead of simply presenting raw data, EventFlow turns it into information that can support operational decision-making.
 
 ### Root Cause Analysis
-Helps identify the factors contributing to a detected issue instead of only showing the problem.
 
-### Event Simulation
-Allows organizers to explore different scenarios and understand how changes could affect the event.
+Detecting a problem is only the first step.
 
-### Event State Monitoring
-Provides a structured view of the current event state so organizers can quickly understand important conditions.
+EventFlow analyzes contributing factors to help answer **why a particular risk is occurring**, allowing organizers to focus on the underlying cause rather than only the visible symptom.
 
-### Interactive Dashboard
-A React-based interface brings the predictions, risks, simulations, and event insights together in one place.
+### Scenario Simulation
 
-## Tech Stack
+What happens if crowd conditions change?
 
-### Frontend
+EventFlow provides simulation capabilities that allow different scenarios to be explored before making operational decisions.
+
+This creates a safer way to evaluate possible outcomes without waiting for the real situation to unfold.
+
+### Event State Intelligence
+
+EventFlow maintains an understanding of the current event state and combines multiple signals to provide a more complete picture of the situation.
+
+---
+
+## Built for Real-World Events
+
+EventFlow can support scenarios such as:
+
+- Concerts and music festivals
+- College and university events
+- Sports events
+- Conferences and exhibitions
+- Public gatherings
+- Large-scale venues
+
+The goal is simple:
+
+> **Give organizers better information early enough to act on it.**
+
+---
+
+## Technology
+
+**Frontend**
 - React
 - Vite
 - Tailwind CSS
-- JavaScript
 
-### Backend
+**Backend**
 - Python
 - FastAPI
-- Machine Learning
 
-### Database
+**Machine Learning**
+- Python-based ML models
+- Crowd prediction models
+- Scenario-based analysis
+
+**Database**
 - PostgreSQL
 
-### Deployment
-- Vercel
-- Render
+**Infrastructure**
 - Docker
+- Render
+- Vercel
 
-## Project Structure
+---
 
-```text
-EventFlow/
-├── backend/
-│   ├── app/
-│   ├── data/
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── database/
-│   └── final.sql
-│
-├── scripts/
-├── docker-compose.yml
-└── render.yaml
+## Machine Learning
+
+EventFlow includes trained crowd prediction models designed around different prediction horizons.
+
+The backend integrates these models into the application's prediction and intelligence services, allowing the dashboard to use model outputs alongside event information and risk analysis.
+
+The system is designed so that the prediction layer can evolve as more event data becomes available.
+
+---
+
+## Engineering Highlights
+
+EventFlow is not just a frontend dashboard.
+
+The platform includes:
+
+- Modular backend services
+- Dedicated prediction and risk-analysis services
+- Machine learning model integration
+- Automated testing
+- PostgreSQL database integration
+- Docker-based deployment support
+- Production frontend build configuration
+- Cloud deployment configuration for backend and frontend
+
+The application is structured to make individual intelligence components easier to test, improve, and extend.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have:
+
+- Node.js
+- Python 3.x
+- PostgreSQL
+- Git
+
+### Clone the repository
+
+```bash
+git clone https://github.com/nehaa67/EventFlow.git
+cd EventFlow

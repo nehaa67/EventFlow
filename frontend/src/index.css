@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+* { box-sizing: border-box; }
+html { background: #0B1020; }
+body { margin: 0; min-width: 320px; font-family: 'Inter', sans-serif; background: #0B1020; color: #F5F7FA; }
+button, input { font-family: inherit; }
+button { cursor: pointer; }
+::selection { background: rgba(34, 211, 238, .2); }
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #0B1020; }
+::-webkit-scrollbar-thumb { background: #263247; border-radius: 999px; }

@@ -1,0 +1,62 @@
+version: "3.9"
+
+# One-command setup for judging/demo purposes:
+#   docker compose up --build
+# Then visit http://localhost:5173 (frontend) — it talks to the backend at
+# http://localhost:8000, which talks to Postgres, auto-seeded from
+# database/final.sql on first boot.
+
+services:
+  db:
+    # database/final.sql runs `CREATE EXTENSION postgis` and every table's
+    # OWNER TO postgres — plain postgres:16 has neither PostGIS nor a
+    # guaranteed "postgres" role name, so this image + POSTGRES_USER
+    # combination is required for the dump to load cleanly.
+    image: postgis/postgis:17-3.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: eventflow
+      POSTGRES_DB: eventflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - eventflow_pgdata:/var/lib/postgresql/data
+      # Runs once, only on an empty data directory — loads the schema +
+      # seed data exactly as provided in database/final.sql.
+      - ./database/final.sql:/docker-entrypoint-initdb.d/01_final.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d eventflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:eventflow@db:5432/eventflow
+    ports:
+      - "8000:8000"
+    volumes:
+      # Trained model files + dataset need to be present at runtime.
+      - ./backend/data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+      VITE_DEFAULT_EVENT_ID: "1"
+    ports:
+      - "5173:5173"
+
+volumes:
+  eventflow_pgdata:
